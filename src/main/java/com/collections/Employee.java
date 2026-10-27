@@ -5,9 +5,9 @@ import java.util.ArrayList;
 public class Employee {
 	private String accountID;
 	private String name;
-	private double balance;
+	private long balance;
 
-	public Employee(String accountID, String name, double balance) {
+	public Employee(String accountID, String name, long balance) {
 		if (accountID == null || accountID.isBlank()) {
 			throw new IllegalArgumentException("Account ID must exist");
 		}
@@ -29,7 +29,7 @@ public class Employee {
 	public String getName() {
 		return name;
 	}
-	public double getBalance() {
+	public long getBalance() {
 		return balance;
 	}
 }
