@@ -17,6 +17,13 @@ public class App
 {
 	public static void main( String[] args )
 	{
+		Thread tugasThread = new Thread(() -> {
+			System.out.println("===============================");
+			System.out.println("tugas thread berjalan dilayar belakang...");
+			System.out.println("===============================");
+		});
+		tugasThread.start();
+
 		Employee muzaki = new Employee("EMP001", "Muzaki", 1000_000);
 		Employee anam = new Employee("EMP002", "Anam", 2000_000);
 		Employee hasan = new Employee("EMP003", "Hasan", 3000_000);
@@ -38,7 +45,7 @@ public class App
 		System.out.println("Account List - Using Map");
 		empMap.forEach((key, employee) -> {
 			System.out.println(employee.getAccountID() + " - " + employee.getName() + " - " + employee.getBalance());
-		});
+		});		
 		System.out.println("===============================");
 
 		Set<Employee> empSet = new HashSet<>();
@@ -50,7 +57,7 @@ public class App
 			System.out.println(e.getAccountID() + " - " + e.getName() + " - " + e.getBalance());
 		}
 		System.out.println("===============================");
-
+		
 		Queue<Employee> empQue = new ArrayDeque<>();
 		empQue.add(muzaki);
 		empQue.add(hasan);
@@ -60,6 +67,5 @@ public class App
 			System.out.println(e.getAccountID() + " - " + e.getName() + " - " + e.getBalance());
 		}
 		System.out.println("===============================");
-
 	}
 }
